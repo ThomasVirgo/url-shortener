@@ -1,0 +1,23 @@
+#id_long_url {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#form label {
+  font-size: 1.5rem;
+}
+
+#id_long_url {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#id_long_url {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+#id_long_url:focus {
+  outline: none;
+  border: 2px solid aquamarine;
+}

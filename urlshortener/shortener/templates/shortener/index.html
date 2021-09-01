@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url-Shortener</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <form method='POST' id='form' class="flex flex-col items-center mx-auto w-1/2 border-2 m-20 p-10 rounded-xl shadow-md">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value='Shorten URL' id='submit-btn' class="bg-white border-2 rounded-full px-5 hover:bg-black hover:text-white hover:border-black cursor-pointer w-4/12">
+    </form>
+    <div class="flex flex-col items-center mx-auto w-1/2 border-2 m-20 p-10 rounded-xl shadow-md">
+    <a class="hover:underline" href={{shortened_url}} target='_blank'>{{shortened_url}}</a>
+    </div>
+</body>
+</html>
