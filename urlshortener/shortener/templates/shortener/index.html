@@ -7,6 +7,11 @@
     <title>Url-Shortener</title>
 </head>
 <body>
-    
+    <form method='POST' id='form'>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value='create shortened url' id='submit-btn'>
+    </form>
+    <div>{{shortened_url}}</div>
 </body>
 </html>
