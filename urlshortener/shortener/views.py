@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse
 from .forms import NewUrlForm
+from .models import UrlPair
 # Create your views here.
 
 def index(request):
@@ -21,4 +23,7 @@ def index(request):
             }
         return render(request, 'shortener/index.html', data)
 
+def redirect_path(request, id):
+    url = get_object_or_404(UrlPair, pk=id).long_url
+    return redirect(url.replace('www.', 'https://'))
     
